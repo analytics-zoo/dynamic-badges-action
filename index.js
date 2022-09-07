@@ -2,6 +2,7 @@ const core = require('@actions/core');
 const http = require('https');
 const globalTunnel = require('global-tunnel-ng');
 
+
 try {
 
   // This object will be stringified and uploaded to the gist. The
@@ -110,6 +111,7 @@ try {
     files: {[core.getInput('filename')]: {content: JSON.stringify(content)}}
   });
 
+
   // Set http_proxy by globalTunnel
   globalTunnel.initialize({
     connect: 'neither',
@@ -140,7 +142,6 @@ try {
               ', status message: ' + res.statusMessage);
           console.log(core.getInput('auth'));
         } else {
-          console.log(core.getInput('auth'));
           console.log('Success!');
         }
       });
