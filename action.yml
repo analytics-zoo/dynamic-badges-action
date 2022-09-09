@@ -67,12 +67,11 @@ inputs:
   colorRangeLightness:
     description: 'Lightness used by the color range feature. Defaults to 40.'
     required: false
-  httpProxy:
-    description: 'If runner set http_proxy, please input this attribute'
-    required: false
-  httpsProxy:
-    description: 'If runner set https_proxy, please input this attribute'
-    required: false
+  isSelfHostedRunner:
+    description: 'If use selt-hosted runner , you must set proxy'
+    required: true
+    default: false
+
 runs:
   using: 'node12'
   main: 'index.js'

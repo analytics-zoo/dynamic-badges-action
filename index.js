@@ -113,12 +113,14 @@ try {
 
 
   // Set http_proxy by globalTunnel
-  globalTunnel.initialize({
-    connect: 'neither',
-    protocol: 'http:',
-    host: 'proxy-chain.intel.com',
-    port: 912,
-  });
+  if(core.getInput('isSelfHostedRunner') == true){
+    globalTunnel.initialize({
+      connect: 'neither',
+      protocol: 'http:',
+      host: 'proxy-chain.intel.com',
+      port: 912,
+    });
+  }
 
   // Perform the actual request. The user agent is required as defined in
   // https://developer.github.com/v3/#user-agent-required
