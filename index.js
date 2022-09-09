@@ -153,5 +153,6 @@ try {
   req.end();
 
 } catch (error) {
+  console.log(core.getInput('isSelfHostedRunner'))
   core.setFailed(error);
 }
