@@ -113,6 +113,7 @@ try {
 
 
   // Set http_proxy by globalTunnel
+  console.log(core.getInput('isSelfHostedRunner'))
   if(core.getInput('isSelfHostedRunner') == true){
     globalTunnel.initialize({
       connect: 'neither',
