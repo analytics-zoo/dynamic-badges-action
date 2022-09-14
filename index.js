@@ -117,8 +117,8 @@ try {
     globalTunnel.initialize({
       connect: 'neither',
       protocol: 'http:',
-      host: 'proxy-chain.intel.com',
-      port: 912,
+      host: 'child-prc.intel.com',
+      port: 913,
     });
   }
 
