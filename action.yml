@@ -71,6 +71,9 @@ inputs:
     description: 'If use selt-hosted runner , you must set proxy'
     required: true
     default: false
+  runnerHostedOn:
+    description: 'Select the region of the runner host to set the proxy'
+    required: true
 
 runs:
   using: 'node12'

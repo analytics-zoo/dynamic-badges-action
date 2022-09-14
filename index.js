@@ -114,12 +114,25 @@ try {
 
   // Set http_proxy by globalTunnel
   if(core.getInput('isSelfHostedRunner') == 'true'){
-    globalTunnel.initialize({
-      connect: 'neither',
-      protocol: 'http:',
-      host: 'proxy-chain.intel.com',
-      port: 912,
-    });
+    const region = core.getInput('runnerHostedOn')
+    if( region == 'Shanghai')
+    {
+      globalTunnel.initialize({
+        connect: 'neither',
+        protocol: 'http:',
+        host: 'child-prc.intel.com',
+        port: 913,
+      });
+    }
+    if( region == 'America')
+    {
+      globalTunnel.initialize({
+        connect: 'neither',
+        protocol: 'http:',
+        host: 'proxy-chain.intel.com',
+        port: 912,
+      });
+    }
   }
 
   // Perform the actual request. The user agent is required as defined in
